@@ -25,16 +25,9 @@
 # 6 
 
 
-hello_name = input("Впишіть своє им'я: \n")
-
+hello_name = input("Впишіть своє им'я: ")
 import colorama
 colorama.init(autoreset= True)
-
-# if hello_name: 
-#     print("Здарова")
-# else:
-#     print("Допобачення друже")
-
 RED = colorama.Fore.RED
 hello = f"{RED}Здаров {hello_name}!"
 print(hello)
