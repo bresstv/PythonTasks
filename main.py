@@ -25,9 +25,10 @@
 # 6 
 
 
-hello_name = input("Впишіть своє им'я: ")
 import colorama
 colorama.init(autoreset= True)
 RED = colorama.Fore.RED
+
+hello_name = input("Впишіть своє им'я: ")
 hello = f"{RED}Здаров {hello_name}!"
 print(hello)
