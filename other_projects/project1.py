@@ -1,5 +1,5 @@
 import colorama
-colorama.init(autoreset=True)
+colorama.init(autoreset= True)
 
 BLUE = colorama.Fore.BLUE
 RED = colorama.Fore.RED
