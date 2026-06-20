@@ -9,7 +9,7 @@ MAGENTA = colorama.Fore.MAGENTA
 CYAN = colorama.Fore.CYAN
 
 
-print(f"{BLUE}Ти охоронець наукового центру — Чорна Меза.\n")
+print(f"{BLUE}Ти охоронець наукового центру Чорна Меза.\n")
 print(f"{BLUE}Ти стоїш на блокпості зі своїм напарником...\n")
 print(f"{BLUE}Раптом вибухи. Ти втрачаєш свідомість...\n")
 
