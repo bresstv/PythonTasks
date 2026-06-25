@@ -35,11 +35,11 @@ while scene != "game_over":
         scene = target
 
     elif action == "death":
-        print(RED + target)
-        print(RED + "ГЕЙМ ОВЕР!!!")
+        print(f"{RED}{target}" )
+        print(f"{RED} ТИ ПРОГРАВ!!! :DDD" )
         scene = "game_over"
 
     elif action == "win":
-        print(GREEN + target)
-        print(GREEN + "ПЕРЕМОГА!")
+        print(f"{GREEN}{target}" )
+        print(f"{GREEN} ТИ ВИГРАВ У МОЄЙ ГРІ!!! ;DDD" )
         scene = "game_over"
