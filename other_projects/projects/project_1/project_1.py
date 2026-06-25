@@ -1,45 +1,45 @@
 from text_game import QUESTS, BLUE, RED, GREEN, CYAN, MAGENTA
 
-def play_game():
-    print(f"{BLUE}Ти охоронець на науковому комплексі Чорна Меза.")
-    print(f"{BLUE}Ти стоїш на блок-пості зі своїм напарником Олексієм.")
-    print(f"{BLUE}Раптом лунає потужний вибух, який накриває все навкруги, та ти відключаєшся.\n")
-    print("-" * 50)
-    
-    current_scene = "start"
-    
-    while current_scene in QUESTS:
-        scene = QUESTS[current_scene]
-        
-        print(scene["text"])
-        print()
-        
-        for option_text in scene["choises"].values():
-            print(option_text)
-            
-        user_input = ""
-        while user_input not in scene["choises"]:
-            user_input = input(f"{MAGENTA}Введи число від 1 до 3: ").strip()
-            if user_input not in scene["choises"]:
-                print(f"{MAGENTA}\nТи ввів щось не те, спробуй ще раз бляха!\n")
-        
-        action_type = scene["actions"][user_input]
-        target = scene["trans"][user_input]
-        
-        print("-" * 50)
-        
-        if action_type == "next_def":
-            current_scene = target   
-            
-        elif action_type == "death":
-            print(f"{RED}\n{target}")
-            print(f"{RED} ГРА ЗАКІНЧЕНА ")
-            current_scene = "game_over"  
-            
-        elif action_type == "win":
-            print(f"{CYAN}\n{target}")
-            print(f"{GREEN} ВІТАЄМО З ПЕРЕМОГОЮ! ")
-            current_scene = "game_over"  
+print(BLUE + "Ти охоронець на науковому комплексі Чорна Меза.")
+print(BLUE + "Ти стоїш на блок-пості зі своїм напарником Олексієм.")
+print(BLUE + "Раптом лунає потужний вибух, який накриває все навкруги, та ти відключаєшся.\n")
 
-if __name__ == "__main__":
-    play_game()
+scene = "start"
+
+while scene != "game_over":
+
+    print(QUESTS[scene]["text"])
+
+    for i in QUESTS[scene]["choises"]:
+        print(QUESTS[scene]["choises"][i])
+
+    answer = input("Вибір: ")
+
+    if answer == "1":
+        action = QUESTS[scene]["actions"]["1"]
+        target = QUESTS[scene]["trans"]["1"]
+
+    elif answer == "2":
+        action = QUESTS[scene]["actions"]["2"]
+        target = QUESTS[scene]["trans"]["2"]
+
+    elif answer == "3":
+        action = QUESTS[scene]["actions"]["3"]
+        target = QUESTS[scene]["trans"]["3"]
+
+    else:
+        print("Я не зрозумів.")
+        continue
+
+    if action == "next_def":
+        scene = target
+
+    elif action == "death":
+        print(RED + target)
+        print(RED + "ГЕЙМ ОВЕР!!!")
+        scene = "game_over"
+
+    elif action == "win":
+        print(GREEN + target)
+        print(GREEN + "ПЕРЕМОГА!")
+        scene = "game_over"
