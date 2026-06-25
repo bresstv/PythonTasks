@@ -13,7 +13,7 @@ while scene != "game_over":
     for i in QUESTS[scene]["choises"]:
         print(QUESTS[scene]["choises"][i])
 
-    answer = input("Вибір: ")
+    answer = input(f"{MAGENTA}Вибір від одного до трьох: \n")
 
     if answer == "1":
         action = QUESTS[scene]["actions"]["1"]
@@ -28,7 +28,7 @@ while scene != "game_over":
         target = QUESTS[scene]["trans"]["3"]
 
     else:
-        print("Я не зрозумів.")
+        print(f"{MAGENTA}\nЯкщо не напишеш числа від одного до трьох - до тебе прийде домой доктор фрікмен.\n")
         continue
 
     if action == "next_def":
