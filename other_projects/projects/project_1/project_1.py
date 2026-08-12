@@ -20,23 +20,25 @@ print(f"{RED}1. Узяти лом та вибратись з дому.")
 print(f"{GREEN}2. Не брати лом та вибратись з дому.")
 print(f"{YELLOW}3. Не вибиратись з дому \n")
 
+def choose_house():
+    
+    the_house = input(f"{MAGENTA} Вибери числа від одного до трьох: ")
 
-the_house = input(f"{MAGENTA} Вибери числа від одного до трьох: ")
-
-if the_house == "1":
-    print(f"{CYAN} Ти успішно вибрався з дому, та побачив старий красний амбар.")
-    
-elif the_house == "2":
-    print(f"{RED} На дворі було так багато зомбі, вас зʼїли.")
-    exit()
-    
-elif the_house == "3":
-    print(f"{RED} Ви померли з голоду.")
-    exit()
-    
-else:
-    print(f"{MAGENTA} Ви щось не те ввели, запустіть код снова.")
-    exit()
+    if the_house == "1":
+        print(f"{CYAN} Ти успішно вибрався з дому, та побачив старий красний амбар.")
+        
+    elif the_house == "2":
+        print(f"{RED} На дворі було так багато зомбі, вас зʼїли.")
+        exit()
+        
+    elif the_house == "3":
+        print(f"{RED} Ви померли з голоду.")
+        exit()
+        
+    else:
+        print(f"{MAGENTA} Ви щось не те ввели, запустіть код снова.")
+        choose_house()
+choose_house()
 
         
 print(f"{BLUE} Що робити з амбаром - вирішуй сам :)) \n")
